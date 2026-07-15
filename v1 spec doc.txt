@@ -16,13 +16,12 @@ With the minimalist appearance the website has to be clean and neat with the whi
 
 Layout
 The page should be split into two sections:
-Left Sidebar (Wishlist) – around 25-30% width.
+Left Sidebar were Wishlist would take around 25-30% width.
 Main Product Section – remaining width displaying products in a responsive grid.
-Products
-Create a sample product dataset with around 12-16 products.
 Store reusable product data separately.
-Implement wish list logic with Context API or custom hooks.
-No backend is required; everything should work on the frontend.
 
-The Product should look clean with the white background and the Wishlist to popup once the item is added to the Wishlist in the left sidebar of the web.
+The Wishlist to popup once the item is added to the Wishlist in the left sidebar of the web.
 
+
+
+The Left sidebar to be shifted to the right side and then updated the changes.
