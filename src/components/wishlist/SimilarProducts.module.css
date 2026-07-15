@@ -1,0 +1,109 @@
+/* SimilarProducts module styles */
+.wrapper {
+  margin-top: 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px dashed #ebebeb;
+}
+
+.label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #bbb;
+  margin: 0 0 0.5rem 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* ── Card ── */
+.card {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: 10px;
+  background: #f8f8fb;
+  border: 1px solid #efefef;
+  transition: background 0.18s, border-color 0.18s;
+  cursor: default;
+}
+
+.card:hover {
+  background: #f0efff;
+  border-color: rgba(108, 99, 255, 0.25);
+}
+
+.cardAdded {
+  background: #f0fff8;
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.image {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: #eee;
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price {
+  font-size: 0.7rem;
+  color: #888;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ── Add button ── */
+.addBtn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1.5px solid #6c63ff;
+  background: transparent;
+  color: #6c63ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.18s ease;
+}
+
+.addBtn:hover:not(:disabled) {
+  background: #6c63ff;
+  color: white;
+  transform: scale(1.1);
+}
+
+.addBtnAdded {
+  border-color: #10b981;
+  color: #10b981;
+  cursor: default;
+}
+
+.addBtnAdded:hover {
+  background: transparent !important;
+  color: #10b981 !important;
+  transform: none !important;
+}

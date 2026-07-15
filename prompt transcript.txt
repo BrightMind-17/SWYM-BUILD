@@ -1,0 +1,189 @@
+Build a simple e-commerce storefront with a wishlist feature. You define
+everything: the product shape, the list/item shape, how the wishlist data
+is preserved. The one concrete requirement: your wishlist has to support
+merging, a user should be able to combine two distinct lists into one.  i am tasked to do this task provide me the prompt to start with this in the codex... The webpage has to be clean with the white color and the  whishlist should appear on the left side of the webpage once the person added the product into the wishlist then it has to appear on the left side with the similar products. provide me a quick clean prompt explain like a human prompt for codex
+
+Here's a natural, human-written prompt you can paste into Codex. It gives enough detail without over-constraining the implementation.
+
+---
+
+**Prompt:**
+
+> Build a simple, modern e-commerce storefront using **React (Vite)** with clean, reusable components and good folder structure.
+>
+> I want the UI to have a **minimal white theme** with subtle shadows, rounded cards, and a clean professional look. Do not use dark mode.
+>
+> ### Layout
+>
+> * The page should be split into two sections:
+>
+>   * **Left Sidebar (Wishlist)** – around 25-30% width.
+>   * **Main Product Section** – remaining width displaying products in a responsive grid.
+>
+> ### Products
+>
+> * Create a sample product dataset with around **12-16 products**.
+> * Each product should contain:
+>
+>   * id
+>   * name
+>   * category
+>   * brand
+>   * price
+>   * rating
+>   * image
+>   * description
+> * Display products as attractive cards with image, title, price, rating, and an **"Add to Wishlist"** button.
+>
+> ### Wishlist
+>
+> * When a product is added, it should immediately appear in the **left sidebar**.
+> * Do not allow duplicate items.
+> * Each wishlist item should display:
+>
+>   * product image
+>   * name
+>   * price
+>   * remove button
+> * Show the total number of wishlist items at the top.
+> * Persist the wishlist using **localStorage** so it remains after page refresh.
+>
+> ### Similar Products
+>
+> * Under every wishlist item, automatically display **2-3 similar products** based on the same category or brand.
+> * These should appear as small suggestion cards.
+> * Clicking a suggestion should add it directly to the wishlist.
+>
+> ### Wishlist Merge Feature (Important Requirement)
+>
+> Implement support for **merging two separate wishlists**.
+>
+> Create two sample wishlists:
+>
+> * Wishlist A
+> * Wishlist B
+>
+> Add a **"Merge Wishlists"** button.
+>
+> When clicked:
+>
+> * Combine both wishlists.
+> * Remove duplicate products using the product id.
+> * Preserve the order by keeping Wishlist A items first and then adding only new items from Wishlist B.
+> * Save the merged result into localStorage.
+> * Show a success message after merging.
+>
+> ### Extra Features
+>
+> * Search products by name.
+> * Filter by category.
+> * Sort by price (Low → High / High → Low).
+> * Responsive design for tablet and mobile.
+> * Smooth hover animations and transitions.
+> * Empty wishlist illustration/message when no items exist.
+>
+> ### Technical Requirements
+>
+> * Use React Hooks.
+> * Keep components modular.
+> * Store reusable product data separately.
+> * Implement wishlist logic with Context API or custom hooks.
+> * Keep the code clean, readable, and well commented.
+> * No backend is required; everything should work on the frontend.
+>
+> The final result should look like a polished mini shopping application with a clean white aesthetic, where the wishlist is always visible on the left, products are displayed on the right, similar products are suggested beneath wishlist items, and users can merge two different wishlists into one seamlessly.
+
+
+src/
+├── components/
+│   ├── layout/
+│   │   ├── Header.jsx            # Sticky nav with wishlist badge
+│   │   └── Header.module.css
+│   ├── products/
+│   │   ├── ProductCard.jsx       # Product card with star rating & wishlist toggle
+│   │   ├── ProductCard.module.css
+│   │   ├── ProductFilters.jsx    # Search + category tabs + sort
+│   │   ├── ProductFilters.module.css
+│   │   ├── ProductGrid.jsx       # Responsive grid + empty state
+│   │   └── ProductGrid.module.css
+│   └── wishlist/
+│       ├── WishlistSidebar.jsx   # Left sidebar with toast, items, footer
+│       ├── WishlistSidebar.module.css
+│       ├── WishlistItem.jsx      # Single wishlist entry
+│       ├── WishlistItem.module.css
+│       ├── SimilarProducts.jsx   # Category/brand-based suggestions
+│       ├── SimilarProducts.module.css
+│       ├── MergeWishlists.jsx    # A+B merge feature panel
+│       └── MergeWishlists.module.css
+├── context/
+│   └── WishlistContext.jsx       # Context API + localStorage persistence
+├── data/
+│   └── products.js               # 16 products + WISHLIST_A + WISHLIST_B
+├── App.jsx                       # Root layout + filter state
+├── App.css                       # Global layout grid + Outfit/Inter fonts
+├── index.css                     # CSS variables / design tokens
+└── main.jsx                      # React entry point
+
+Products
+16 products across 5 categories: Electronics, Footwear, Clothing, Accessories, Home & Living
+Each has: id, name, category, brand, price, rating, image, description
+Star rating component (filled/empty stars)
+Heart button on image (instant toggle)
+"Add to Wishlist" / "Wishlisted" button in card footer
+Wishlist Sidebar
+Sticky left sidebar (27% width) with scrollable item list
+No duplicates — silently ignores re-adds
+localStorage persistence — survives page refresh
+Toast notification on add / merge
+Animated empty state (floating SVG illustration)
+Total price displayed in footer
+Checkout button with hover effect
+Similar Products
+Shown beneath each wishlist item (collapsible via toggle)
+Finds 2–3 products with same category or brand
+Click + button to add directly to wishlist
+Shows ✓ checkmark if already in wishlist
+Merge Wishlists
+Expandable panel with Wishlist A and Wishlist B previews
+Merge & Save deduplicates by id
+Preserves Wishlist A order → appends unique B items → appends current wishlist items
+Saves merged result to localStorage
+Shows purple gradient toast on success
+Search, Filter & Sort
+Real-time text search (name, brand, description)
+Category filter tabs (All, Electronics, Footwear, Clothing, Accessories, Home & Living)
+Sort: Default / Price Low→High / Price High→Low / Top Rated
+Live product count display
+Design
+White minimal theme — no dark mode
+Outfit (headings) + Inter (body) from Google Fonts
+Subtle shadows, rounded-16px cards, #6c63ff purple accent
+Smooth hover: card lifts 4px, image zooms, buttons transition
+Responsive: 2-column grid → stacked on mobile
+
+I need to make some changes there are two buttons to click onto the wishlist i would change that into one... in the image that pink heart one alone is enough.. bring the wishlist to the right sidebar where the wishlist sidebar should open only when the product is been added to the wish list like a popup... and the Product details be placeed on the left side bar like price adjustments can be on the left sidebar.
+
+Changes Made
+🃏 ProductCard — Single heart button only
+Removed the bottom "Add to Wishlist" text button entirely
+Kept only the pink heart icon on the top-right of the image
+Moved the price into a gradient overlay at the bottom of the image (dark-to-transparent, white text)
+Heart now animates with a pulse effect when activated
+📋 Left Sidebar — Replaced with Filters Panel
+Created a new FiltersSidebar component (vertical, sticky, always visible)
+Contains: Search, Category list, Price Range dual sliders, Sort options
+Clean section dividers, a "Reset" button appears when any filter is active
+Shows live "X products found" count
+📦 Right Wishlist — Slide-in Drawer Popup
+Created WishlistDrawer — a fixed panel that slides in from the right side
+Auto-opens the moment you heart a product (via isDrawerOpen in context)
+Has a ✕ close button and a semi-transparent backdrop (click either to dismiss)
+A floating heart FAB (bottom-right corner) lets you reopen it anytime, with count badge
+Header heart icon also opens the drawer when clicked
+🔌 WishlistContext — New drawer state
+Added isDrawerOpen + setIsDrawerOpen state
+addToWishlist() now calls setIsDrawerOpen(true) automatically.
+
+
+
+

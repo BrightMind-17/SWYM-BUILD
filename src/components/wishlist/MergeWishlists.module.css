@@ -1,0 +1,169 @@
+/* MergeWishlists module styles */
+.wrapper {
+  margin-bottom: 1rem;
+}
+
+/* ── Toggle button ── */
+.toggleBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  border: 1.5px dashed #c8c4ff;
+  background: rgba(108, 99, 255, 0.04);
+  color: #6c63ff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  text-align: left;
+}
+
+.toggleBtn:hover {
+  background: rgba(108, 99, 255, 0.1);
+  border-color: #6c63ff;
+}
+
+.chevron {
+  margin-left: auto;
+  transition: transform 0.2s ease;
+}
+
+.chevronUp {
+  transform: rotate(180deg);
+}
+
+/* ── Expanded panel ── */
+.panel {
+  margin-top: 0.75rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: #fafafa;
+  border: 1px solid #f0f0f0;
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.listsRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.arrowCol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1.4rem;
+  flex-shrink: 0;
+}
+
+/* ── Wishlist previews ── */
+.preview {
+  flex: 1;
+  min-width: 0;
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+  border: 1.5px solid transparent;
+}
+
+.preview_purple {
+  background: rgba(108, 99, 255, 0.05);
+  border-color: rgba(108, 99, 255, 0.2);
+}
+
+.preview_teal {
+  background: rgba(16, 185, 129, 0.05);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.previewTitle {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 0.5rem 0;
+  color: #666;
+}
+
+.preview_purple .previewTitle { color: #6c63ff; }
+.preview_teal .previewTitle { color: #10b981; }
+
+.previewList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.previewItem {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.previewDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.preview_purple .previewDot { background: #6c63ff; }
+.preview_teal .previewDot   { background: #10b981; }
+
+.previewName {
+  font-size: 0.72rem;
+  color: #555;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Merge note ── */
+.mergeNote {
+  font-size: 0.68rem;
+  color: #bbb;
+  text-align: center;
+  margin: 0.75rem 0 0.75rem;
+  line-height: 1.5;
+}
+
+/* ── Merge button ── */
+.mergeBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0.65rem;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #6c63ff, #9c6fff);
+  color: white;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+  font-family: inherit;
+  box-shadow: 0 4px 16px rgba(108, 99, 255, 0.3);
+}
+
+.mergeBtn:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.mergeBtn:active {
+  transform: translateY(0);
+}

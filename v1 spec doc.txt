@@ -1,0 +1,28 @@
+Problem : 
+Build an e-commerce storefront with a wishlist feature.
+To define the product: the product shape, the list/item shape, how the wishlist data
+is preserved. 
+The one concrete requirement: your wishlist has to support
+merging, a user should be able to combine two distinct lists into one.
+
+solution:
+  
+The create a webpage  that has to be clean with the white color and the  whishlist should appear on the left side of the webpage once the person added the product into the wishlist.
+It product we can use around 10-15 products of the choice.
+It has to appear like how we'll purchase on the online like the one we do on the amazon with the clean boxes separating the products.
+I am gonna use the Amazon website as an example for this creation.
+The whilst appearing would be the example shown by Swym on the yesterdays ppt.
+With the minimalist appearance the website has to be clean and neat with the white background.
+
+Layout
+The page should be split into two sections:
+Left Sidebar (Wishlist) – around 25-30% width.
+Main Product Section – remaining width displaying products in a responsive grid.
+Products
+Create a sample product dataset with around 12-16 products.
+Store reusable product data separately.
+Implement wish list logic with Context API or custom hooks.
+No backend is required; everything should work on the frontend.
+
+The Product should look clean with the white background and the Wishlist to popup once the item is added to the Wishlist in the left sidebar of the web.
+

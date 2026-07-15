@@ -1,0 +1,100 @@
+/* ============================================================
+   App.css – Global layout & design tokens
+   ============================================================ */
+
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ── CSS Reset & Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f4f4f8;
+  color: #1a1a2e;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* ── Root layout ── */
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Body: left filter sidebar + main content ── */
+.app-body {
+  display: grid;
+  grid-template-columns: 248px 1fr;
+  flex: 1;
+  min-height: calc(100vh - 68px);
+}
+
+/* ── Main content (center product grid) ── */
+.main-content {
+  overflow-y: auto;
+  min-width: 0;
+  background: #f4f4f8;
+}
+
+.main-inner {
+  padding: 1.75rem 1.75rem 2.5rem;
+  max-width: 1100px;
+}
+
+/* ── Section header ── */
+.section-header {
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #1a1a2e;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.section-subtitle {
+  font-size: 0.88rem;
+  color: #bbb;
+  margin-top: 4px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .app-body {
+    grid-template-columns: 220px 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-body {
+    grid-template-columns: 1fr;
+  }
+
+  .main-inner {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-inner {
+    padding: 1rem 0.75rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+}
